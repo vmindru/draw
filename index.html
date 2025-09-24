@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soccer Drill Designer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Soccer Drill Designer</h1>
+
+      <section>
+        <h2>Players &amp; Staff</h2>
+        <form id="player-form" class="stack" autocomplete="off">
+          <label class="input-block">
+            <span>Label</span>
+            <input type="text" id="player-label" placeholder="Player #" />
+          </label>
+          <label class="input-block">
+            <span>Shape</span>
+            <select id="player-shape">
+              <option value="circle">Circle</option>
+              <option value="square">Square</option>
+              <option value="triangle">Triangle</option>
+              <option value="rhombus">Rhombus</option>
+            </select>
+          </label>
+          <label class="input-block">
+            <span>Color</span>
+            <input type="color" id="player-color" value="#2b6cb0" />
+          </label>
+          <label class="input-block">
+            <span>Role</span>
+            <select id="player-role">
+              <option value="">Player</option>
+              <option value="GK">Goalkeeper</option>
+              <option value="Coach">Coach</option>
+            </select>
+          </label>
+          <button type="submit" class="primary">Add player</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Training equipment</h2>
+        <div class="equipment-grid" id="equipment-buttons">
+          <button type="button" data-type="cone">Cone</button>
+          <button type="button" data-type="marker">Marker</button>
+          <button type="button" data-type="small-goal">Small goal</button>
+          <button type="button" data-type="big-goal">Big goal</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Actions</h2>
+        <div class="actions-grid" id="action-buttons">
+          <button type="button" data-action="run" class="active">Run</button>
+          <button type="button" data-action="dribble">Dribble</button>
+          <button type="button" data-action="pass">Pass</button>
+          <button type="button" data-action="shoot">Shoot</button>
+          <button type="button" data-action="none">Move items</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Animation</h2>
+        <button type="button" id="animate-button" class="secondary">Play drill</button>
+        <button type="button" id="clear-lines" class="secondary">Clear lines</button>
+        <button type="button" id="reset-field" class="secondary">Reset field</button>
+      </section>
+    </aside>
+
+    <main class="workspace">
+      <div class="field-wrapper">
+        <div id="field" class="field" tabindex="0">
+          <svg id="field-overlay" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
