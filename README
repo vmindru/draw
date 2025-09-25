@@ -1,1 +1,12 @@
+# Soccer Drill Designer
+
+This project provides a single-page web app for laying out soccer drills. The layout matches the requested 1.55:1 pitch ratio with a separate menu bar that spans the full width of the page.
+
+## Features
+- SVG-based pitch that occupies roughly 70% of the vertical viewport with responsive scaling.
+- Declarative menu data (`TOOL_GROUPS` in `script.js`) that populates selectable items such as players, cones, equipment, and arrows.
+- Interactive actions that let you move, remove, resize, recolor, and place items on the pitch.
+
+## Getting Started
+Open `index.html` in any modern browser to launch the designer. The supporting CSS (`style.css`) and JavaScript (`script.js`) files are loaded automatically.
 
