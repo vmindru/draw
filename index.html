@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soccer Drill Designer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="workspace">
+      <section class="pitch-wrapper">
+        <svg id="pitch" viewBox="0 0 155 100" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5.5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 z" fill="currentColor"></path>
+          </marker>
+          <marker id="arrowhead-double" markerWidth="6" markerHeight="6" refX="0.5" refY="3" orient="auto">
+            <path d="M6,0 L0,3 L6,6 z" fill="currentColor"></path>
+          </marker>
+        </defs>
+        <rect x="0" y="0" width="155" height="100" class="pitch-outline"></rect>
+        <line x1="77.5" y1="0" x2="77.5" y2="100" class="pitch-marking"></line>
+        <circle cx="77.5" cy="50" r="9.15" class="pitch-marking"></circle>
+        <circle cx="77.5" cy="50" r="0.5" class="pitch-marking"></circle>
+        <rect x="0" y="21" width="16.5" height="58" class="pitch-marking"></rect>
+        <rect x="138.5" y="21" width="16.5" height="58" class="pitch-marking"></rect>
+        <rect x="0" y="36" width="5.5" height="28" class="pitch-marking"></rect>
+        <rect x="149.5" y="36" width="5.5" height="28" class="pitch-marking"></rect>
+        <circle cx="11" cy="50" r="0.5" class="pitch-marking"></circle>
+        <circle cx="144" cy="50" r="0.5" class="pitch-marking"></circle>
+        <circle cx="77.5" cy="50" r="0.5" class="pitch-marking"></circle>
+        </svg>
+      </section>
+      <aside class="action-menu" id="action-menu">
+        <h2 class="action-menu__title">Actions</h2>
+        <div class="action-menu__primary">
+          <button type="button" class="action-button" data-action="move" aria-pressed="true">Move</button>
+          <button type="button" class="action-button" data-action="remove" aria-pressed="false">Remove</button>
+          <button type="button" class="action-button" data-action="resize" aria-pressed="false">Resize</button>
+          <button type="button" class="action-button" data-action="color" aria-pressed="false">Color</button>
+        </div>
+        <div class="action-panel" data-panel="resize" hidden>
+          <h3 class="action-panel__title">Sizes</h3>
+          <div class="action-panel__options" id="size-options">
+            <button type="button" class="action-option" data-size-scale="0.6">XS</button>
+            <button type="button" class="action-option" data-size-scale="0.8">S</button>
+            <button type="button" class="action-option is-active" data-size-scale="1">M</button>
+            <button type="button" class="action-option" data-size-scale="1.2">L</button>
+            <button type="button" class="action-option" data-size-scale="1.5">XL</button>
+          </div>
+        </div>
+        <div class="action-panel" data-panel="color" hidden>
+          <h3 class="action-panel__title">Colors</h3>
+          <div class="action-panel__options action-panel__options--colors" id="color-options">
+            <button type="button" class="color-swatch is-active" data-color="#f97316" aria-label="Orange"></button>
+            <button type="button" class="color-swatch" data-color="#38bdf8" aria-label="Sky"></button>
+            <button type="button" class="color-swatch" data-color="#60a5fa" aria-label="Blue"></button>
+            <button type="button" class="color-swatch" data-color="#facc15" aria-label="Yellow"></button>
+            <button type="button" class="color-swatch" data-color="#f87171" aria-label="Red"></button>
+            <button type="button" class="color-swatch" data-color="#22c55e" aria-label="Green"></button>
+            <button type="button" class="color-swatch" data-color="#0f172a" aria-label="Navy"></button>
+            <button type="button" class="color-swatch" data-color="#f4f4f5" aria-label="White"></button>
+          </div>
+        </div>
+      </aside>
+    </section>
+    <section class="menu" id="menu"></section>
+  </main>
+
+  <template id="menu-group-template">
+    <div class="menu-group">
+      <h2 class="menu-group__title"></h2>
+      <div class="menu-group__items"></div>
+    </div>
+  </template>
+
+  <template id="menu-item-template">
+    <button type="button" class="menu-item" aria-pressed="false"></button>
+  </template>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
